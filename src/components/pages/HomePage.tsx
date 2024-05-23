@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger, } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
 import { ChevronLeft, ChevronRight, Copy, CreditCard, File, Home, LineChart, ListFilter, MoreVertical, Package, Package2, PanelLeft, Search, Settings, ShoppingCart, Truck, Users2, } from "lucide-react"
 import { ModeToggle } from "../mode-toggle"
+import { ThemeToggle } from "../theme-toggle"
 
 export function HomePage() {
     return (
@@ -114,7 +115,7 @@ export function HomePage() {
                     </TooltipProvider>
                 </nav>
             </aside>
-            <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 w-screen">
+            <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
                 <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -197,6 +198,7 @@ export function HomePage() {
                             className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
                         />
                     </div>
+                    <ThemeToggle />
                     <ModeToggle />
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
