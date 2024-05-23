@@ -1,29 +1,25 @@
 import './styles/app.scss'
-// import { Button } from "@/components/ui/button"
-// import { Calendar } from "@/components/ui/calendar"
-// import { useState } from 'react'
 import { ThemeProvider } from './components/theme-provider'
-// import { ModeToggle } from './components/mode-toggle'
 import { HomePage } from './components/pages/HomePage'
+import { useState } from 'react'
 
 
 function App() {
-    // const [date, setDate] = useState<Date | undefined>(new Date())
+    const [theme, setTheme] = useState('theme-green')
+
+    function changeTheme() {
+        if (theme === 'theme-green') {
+            setTheme('theme-red')
+        } else {
+            setTheme('theme-green')
+        }
+    }
 
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            {/* <div className='theme-green' >
-                <p>Hello, world!</p>
-                <Button>Click me</Button>
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    className="rounded-md border"
-                />
-                <ModeToggle />
-            </div> */}
-            <HomePage />
+            <div id='main-content' onClick={changeTheme} className={theme}>
+                <HomePage />
+            </div>
         </ThemeProvider>
     )
 }
